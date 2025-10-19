@@ -1,0 +1,271 @@
+/* VARIABLES */
+$gray: #2e2e2e;
+$white: #fff;
+$mainColor: #00d0b2; 
+$secondColor: #d817ab;
+$unactiveColor: #a8a8a8;
+
+$fontFamily: "Roboto", Arial, Helvetica, sans-serif;
+
+/* MIXIN */
+@mixin flexbox {
+    display: flex;
+    justify-content: space-between;
+}
+
+@mixin gridProd {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 80%;
+}
+
+@mixin button($txtColor, $widthBtn) {
+    border: none;
+    color: $txtColor;
+    border-radius: 15px;
+    text-align: center;
+    width: $widthBtn;
+    cursor: pointer;
+}
+
+/* EXTEND */
+
+%links {
+    text-decoration: none;
+    font-size: clamp(.5rem, 2vw, 1.2rem);
+    font-weight: 500;
+}
+
+%boxShadow {
+    box-shadow: 0 7px 15px rgba(0, 0, 0, .5);
+}
+
+// @extend link;
+
+// @include flexbox;
+
+body {
+    font-family: $fontFamily;
+    margin: 0;
+    color: $gray;
+}
+
+header {
+    width: 100%;
+    @include flexbox;
+    padding: 40px 40px;
+    box-sizing: border-box;
+    background-color: $gray;
+
+    @extend %boxShadow;
+
+    img {
+        width: 60px;
+        filter: brightness(100);
+    }
+
+    .header__menu {
+        display: flex;
+        gap: 100px;
+
+        .header__nav {
+                @include flexbox;
+                gap: 20px;
+                align-items: center;
+
+                .header__link {
+                    text-decoration: none;
+                    font-size: clamp(.5rem, 2vw, 1.2rem);
+                    font-weight: 500;
+                    color: $white;
+                    transition: color 0.3s ease, transform 0.3s ease;
+
+                }
+        }
+
+        .header__user {
+            @include flexbox;
+            gap: 30px;
+            align-items: center;
+
+            .header__icon {
+                cursor: pointer;
+                color: $white;
+
+                transition: transform 0.2s;
+            }
+        }
+    }
+}
+
+.banner {
+    width: 100%;
+    padding: 40px 0;
+    text-align: center;
+    background-image: url(../img/BG.webp);
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    background-position: center;
+    opacity: .75;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-bottom: solid 10px $mainColor;
+
+    .banner__title {
+        color: $white;
+        font-size: clamp(1.5rem, 4vw, 3rem);
+        font-weight: 900;
+        text-shadow: 4px 4px 6px $gray;
+        letter-spacing: clamp(1.1rem, 3vw, 2rem);
+    }
+
+    .banner__subtitle {
+            color: $white;
+            width: 80%;
+            margin: auto;
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            font-weight: 300;
+            text-shadow: 4px 4px 6px $gray;
+        }
+}
+
+.products{
+    @include gridProd;
+    margin: 75px auto 75px;
+    gap: 50px;
+
+    .products__item {
+        @include flexbox;
+        flex-direction: column;
+        align-items: center;
+
+        .products__img{
+            width: 70%;
+            transition: transform 0.2s;
+        }
+
+        .products__title{
+            width: 70%;
+            text-align: center;
+            font-size: clamp(.7rem, 1.5vw, 1.1rem);
+            font-weight: 700;
+        }
+
+        .products__price{
+            margin: 10px 0 30px 0;
+            text-align: center;
+            font-size: clamp(1rem, 1.8vw, 1.7rem);
+            font-weight: 900;
+        }
+
+        .products__btn{
+            display: block;
+            align-items: center;
+            font-size: clamp(.7rem, 2vw, 1.2rem);
+            font-weight: 700;
+
+            @include button($white, 70%);
+            background-color: $mainColor;
+            padding: 10px 20px;
+
+            transition: background-color .3s ease;
+        }
+
+        .products__btn--unactive {
+            background-color:$unactiveColor ;
+            opacity: .5;
+        }
+    }
+}
+
+.footer {
+    width: 100%;
+    background-color: $gray;
+    border-top: solid 10px $mainColor;
+
+    .footer__menu {
+        @include flexbox;
+        width: 100%;
+        padding: 100px 60px;
+        box-sizing: border-box;
+
+        .footer__logo{
+            width: 150px;
+            filter: brightness(100);
+        }
+
+        .footer__nav{
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            align-items: center;
+
+            .footer__link{
+                text-decoration: none;
+                font-size: clamp(.8rem,1.5vw, 1.2rem);
+                font-weight: 500;
+                color: $white;
+
+                transition: transform 0.2s;
+            }
+        }
+        .footer__div{
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            align-items: center;
+
+            .footer__contact {
+                text-decoration: none;
+                color: $white;
+                font-size: clamp(.8rem, 1.5vw, 1.2rem);
+                font-weight: 500;
+
+                transition: transform 0.2s;
+            }
+        }
+    }
+
+    .footer__copy{
+        display: block;
+        text-align: center;
+        color: $white;
+        font-weight: 100;
+        letter-spacing: .5rem;
+    }
+}
+
+@media (hover:hover) {
+    .header__menu .header__nav .header__link:hover,
+    .header__menu .header__user .header__icon:hover,
+    .footer__menu .footer__nav .footer__link:hover,
+    .footer__menu .footer__div .footer__contact:hover {
+        color: $mainColor;
+        transform: scale(1.1);
+    }
+.header__menu .header__nav .header__link:hover{
+color: $mainColor;
+}
+    .products .products__item .products__btn:hover {
+        background-color: $secondColor;
+    }
+
+    .products__img:hover {
+        transform: scale(1.2);
+    }
+    .products .products__item .products__btn--unactive:hover {
+        background-color: $unactiveColor;
+    }
+}
+
+@media screen and (max-width: 800px) {
+     .products {
+         grid-template-columns: repeat(2, 1fr);
+     }   
+ }
+
+ @media screen and (max-width: 560px) {
+     .products {
+     grid-template-columns: repeat(1, 1fr);
+     }
+ }
