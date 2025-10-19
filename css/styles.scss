@@ -2,7 +2,7 @@
 $gray: #2e2e2e;
 $white: #fff;
 $mainColor: #00d0b2; 
-$secondColor: #932b7b;
+$secondColor: #d817ab;
 $unactiveColor: #a8a8a8;
 
 $fontFamily: "Roboto", Arial, Helvetica, sans-serif;
@@ -102,7 +102,10 @@ header {
     width: 100%;
     padding: 40px 0;
     text-align: center;
-    background-image: url(../img/Document.jpg);
+    background-image: url(../img/BG.webp);
+    background-repeat: no-repeat; 
+    background-size: cover; 
+    background-position: center;
     opacity: .75;
     background-repeat: no-repeat;
     background-size: cover;

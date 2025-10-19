@@ -56,7 +56,10 @@ header .header__menu .header__user .header__icon {
   width: 100%;
   padding: 40px 0;
   text-align: center;
-  background-image: url(../img/Document.jpg);
+  background-image: url(../img/BG.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   opacity: 0.75;
   background-repeat: no-repeat;
   background-size: cover;
@@ -189,7 +192,7 @@ header .header__menu .header__user .header__icon {
     color: #00d0b2;
   }
   .products .products__item .products__btn:hover {
-    background-color: #932b7b;
+    background-color: #d817ab;
   }
   .products__img:hover {
     transform: scale(1.2);
