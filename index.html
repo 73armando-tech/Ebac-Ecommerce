@@ -24,7 +24,10 @@
              </nav>        
             <section class="header__user">
                 <i data-feather="user" class="header__icon"></i>
-                <i data-feather="shopping-cart" class="header__icon header__icon--secondary"></i>
+                <div class="cart-icon-wraper">
+                    <i data-feather="shopping-cart" class="header__icon header__icon--secondary"></i>
+                    <span id="cart-badge">2</span>
+                </div>
             </section>
         </section>
 
@@ -183,5 +186,6 @@
         
     </footer>
 
+    <script src="js/interaction.js"></script>
 </body>
 </html>

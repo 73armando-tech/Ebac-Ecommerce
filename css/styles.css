@@ -52,6 +52,27 @@ header .header__menu .header__user .header__icon {
   transition: transform 0.2s;
 }
 
+.cart-icon-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+#cart-badge {
+  position: absolute;
+  top: 40px;
+  right: 30px;
+  background-color: #00d0b2;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  width: 18px;
+  height: 18px;
+  text-align: center;
+  line-height: 18px;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
 .banner {
   width: 100%;
   padding: 40px 0;
@@ -139,14 +160,18 @@ header .header__menu .header__user .header__icon {
   flex-direction: column;
   position: fixed;
   top: 0;
-  right: 100%;
+  right: -100%;
   width: 500px;
   height: 100vh;
   background-color: #fff;
   box-shadow: -2px 0 8px rgba(0, 0, 0, 0.2);
   padding: 20px;
-  transition: right 0.3s ease;
+  transition: right 0.5s ease;
   z-index: 1000;
+}
+
+.cart-sidebar.active {
+  right: 0;
 }
 
 .cart-content {
