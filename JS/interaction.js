@@ -1,7 +1,10 @@
 const cartIcon = document.querySelector('.header__icon--secondary');
 const cartSidebar = document.querySelector('.cart-sidebar');
 const cartClose = document.querySelector('.cart-close');
+const cartList = document.querySelector('.cart-content');
+const addButtons = document.querySelectorAll('.products__btn');
 
+// ABRIR / CERRAR SIDEBAR
 cartIcon.addEventListener('click', () => {
     cartSidebar.classList.add('active');
 });
@@ -10,37 +13,7 @@ cartClose.addEventListener('click', () => {
     cartSidebar.classList.remove('active');
 });
 
-
-const cartItems = document.querySelector ('.cart-content');
-
-cartItems.addEventListener('click', (e) => {
-    if (e.target.classList.contains('cart-remove')) {
-
-        const item = e.target.closest('li');
-        item.remove();
-
-        updateBadge();
-    }
-})
-
-
-function updateBadge() {
-    const cartLi = document.querySelectorAll('.cart-content li'); 
-    const badge = document.getElementById('cart-badge');
-
-    const count = cartLi.length;
-    badge.textContent = count;
-
-    if (count === 0) {
-        badge.style.display = 'none';
-    } else {
-        badge.style.display = 'block';
-    }
-}
-
-const addButtons = document.querySelectorAll('.products__btn');
-const cartList = document.querySelector('.cart-content');
-
+// AGREGAR PRODUCTO DESDE CADA BOTÓN
 addButtons.forEach(btn => {
     btn.addEventListener('click', () => {
 
@@ -52,42 +25,52 @@ addButtons.forEach(btn => {
     });
 });
 
+// FUNCIÓN PARA AGREGAR AL CARRITO
 function addToCart(name, price, img) {
     const li = document.createElement('li');
 
     li.innerHTML = `
         <div class="cart-item">
-            <img class="cart-img-prod" src="/img/product01.webp" alt="">
+            <img class="cart-img-prod" src="${img}" alt="">
             <div class="cart-description">
-                <p class="cart-prod-description">Funko Pop Derpy #2260 K-Pop Demon Hunters</p>
-                <p class="cart-prod-price">$319.00</p>
+                <p class="cart-prod-description">${name}</p>
+                <p class="cart-prod-price">$${price}</p>
             </div>
             <i data-feather="trash" class="cart-remove"></i>
         </div>
-        `;
+    `;
 
-        cartList.appendChild(li);
+    cartList.appendChild(li);
 
-        feather.replace();
-
-        updateBadge();
-        updateTotal();
+    feather.replace();
+    updateBadge();
+    updateTotal();
 }
 
+// ACTUALIZAR TOTAL
 function updateTotal() {
     const prices = document.querySelectorAll('.cart-prod-price');
     let total = 0;
 
     prices.forEach(p => {
         total += Number(p.textContent.replace('$', ''));
-});
+    });
 
-document.querySelector('cart-total').textContent = `Total: $${total}`
+    document.querySelector('.cart-total').textContent = `Total: $${total}`;
 }
 
-updateBadge();
-updateTotal();
+// ACTUALIZAR BADGE
+function updateBadge() {
+    const cartLi = document.querySelectorAll('.cart-content li'); 
+    const badge = document.getElementById('cart-badge');
 
+    const count = cartLi.length;
+    badge.textContent = count;
+
+    badge.style.display = count === 0 ? 'none' : 'block';
+}
+
+// ELIMINAR PRODUCTO DEL CARRITO
 cartList.addEventListener('click', (e) => {
     if (e.target.classList.contains('cart-remove')) {
         const item = e.target.closest('li');
@@ -97,5 +80,6 @@ cartList.addEventListener('click', (e) => {
     }
 });
 
-const clearCartBtn = document.querySelector('.cart-clear');
-
+// INICIALIZAR
+updateBadge();
+updateTotal();
