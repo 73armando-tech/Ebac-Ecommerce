@@ -97,3 +97,5 @@ cartList.addEventListener('click', (e) => {
     }
 });
 
+const clearCartBtn = document.querySelector('.cart-clear');
+
