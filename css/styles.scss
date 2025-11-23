@@ -43,6 +43,9 @@ $fontFamily: "Roboto", Arial, Helvetica, sans-serif;
 // @extend link;
 
 // @include flexbox;
+main {
+    padding-top: 125px;
+}
 
 body {
     font-family: $fontFamily;
@@ -51,12 +54,17 @@ body {
 }
 
 header {
+    top: 0;
     width: 100%;
     @include flexbox;
     align-items: center;
     padding: 40px 40px;
     box-sizing: border-box;
     background-color: $gray;
+
+
+    position: fixed;
+    z-index: 10;
 
     @extend %boxShadow;
 
