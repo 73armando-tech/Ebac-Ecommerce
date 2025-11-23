@@ -3,6 +3,10 @@ const cartSidebar = document.querySelector('.cart-sidebar');
 const cartClose = document.querySelector('.cart-close');
 const cartList = document.querySelector('.cart-content');
 const addButtons = document.querySelectorAll('.products__btn');
+const hambMenu = document.querySelector('.header__hamb');
+const hambTopMenu = document.querySelector('.hamb__menu');
+const hambClose = document.querySelector('.hamb__close');
+
 
 // ABRIR / CERRAR SIDEBAR
 cartIcon.addEventListener('click', () => {
@@ -12,6 +16,18 @@ cartIcon.addEventListener('click', () => {
 cartClose.addEventListener('click', () => {
     cartSidebar.classList.remove('active');
 });
+
+// ABRIR / CERRAR MENU
+
+hambMenu.addEventListener('click', () => {
+    hambTopMenu.classList.add('active');
+});
+
+hambClose.addEventListener('click',() => {
+    hambTopMenu.classList.remove('active');
+});
+
+
 
 // AGREGAR PRODUCTO DESDE CADA BOTÓN
 addButtons.forEach(btn => {

@@ -21,7 +21,7 @@
                 <a class="header__link" href="#">Nosotros</a>
                 <a class="header__link" href="#">Productos</a>
                 <a class="header__link" href="#">Contacto</a>
-             </nav>        
+            </nav>        
             <section class="header__user">
                 <i data-feather="user" class="header__icon"></i>
                 <div class="cart-icon-wraper">
@@ -30,9 +30,12 @@
                 </div>
             </section>
         </section>
-
+        
+        <div class="header__hamb">
+            <i data-feather="menu" class="header__hamb__icon header__hamb__icon--secondary"></i>
+        </div>    
     </header>
-
+   
     <!-----------MAIN----------->
     <main>
         <section class="banner">
@@ -206,6 +209,30 @@
             <button class="cart-checkout">PAGAR</button>
         </div>
     </aside>
+
+    <!------HAMBURGER MENU------>
+
+     <div class="hamb__menu">
+
+        <div class="hamb__close">
+            <i data-feather="x"></i>
+        </div>
+        
+        <div class="hamb__user">
+            <i data-feather="user" class="header__icon"></i>
+            <div class="cart-hamb-wraper">
+                <i data-feather="shopping-cart" class="header__icon header__icon--secondary"></i>
+                <span class="cart-badge">2</span>
+            </div>
+        </div>
+
+        <div class="hamb__nav">
+            <a class="header__link" href="#">Inicio</a>
+            <a class="header__link" href="#">Nosotros</a>
+            <a class="header__link" href="#">Productos</a>
+            <a class="header__link" href="#">Contacto</a>
+        </div>
+    </div>
 
     <!-----------SCRIPT FEATHER----------->
     <script src="https://unpkg.com/feather-icons"></script>
