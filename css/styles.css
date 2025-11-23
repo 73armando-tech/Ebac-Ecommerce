@@ -32,13 +32,15 @@ header img {
   filter: brightness(100);
 }
 header .header__hamb {
+  width: 80px;
   display: flex;
+  justify-content: center;
   cursor: pointer;
   color: #fff;
   font-size: 2rem;
 }
 header .header__hamb i {
-  width: 30px;
+  width: 80px;
   height: 30px;
 }
 header .header__menu {
@@ -198,7 +200,7 @@ header .header__user .header__icon {
 .hamb__menu .hamb__close {
   position: absolute;
   top: 50px;
-  left: 45px;
+  left: 70px;
   cursor: pointer;
   font-size: 1.5rem;
   color: #2e2e2e;
@@ -289,8 +291,8 @@ header .header__user .header__icon {
 
 .cart-close {
   position: absolute;
-  top: 15px;
-  right: 25px;
+  top: 50px;
+  right: 40px;
   cursor: pointer;
   font-size: 1.5rem;
   color: #2e2e2e;
