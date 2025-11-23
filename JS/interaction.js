@@ -3,12 +3,14 @@ const cartSidebar = document.querySelector('.cart-sidebar');
 const cartClose = document.querySelector('.cart-close');
 const cartList = document.querySelector('.cart-content');
 const addButtons = document.querySelectorAll('.products__btn');
-const hambMenu = document.querySelector('.header__hamb');
-const hambTopMenu = document.querySelector('.hamb__menu');
-const hambClose = document.querySelector('.hamb__close');
+
+const menuIcon = document.querySelector('.header__hamb__icon');
+const menuSidebar = document.querySelector('.hamb__menu');
+const menuClose = document.querySelector('.hamb__close');
 
 
-// ABRIR / CERRAR SIDEBAR
+
+// ABRIR / CERRAR SIDEBAR CARRITO
 cartIcon.addEventListener('click', () => {
     cartSidebar.classList.add('active');
 });
@@ -17,14 +19,14 @@ cartClose.addEventListener('click', () => {
     cartSidebar.classList.remove('active');
 });
 
-// ABRIR / CERRAR MENU
+// ABRIR / CERRAR SIDEBAR MENU
 
-hambMenu.addEventListener('click', () => {
-    hambTopMenu.classList.add('active');
+menuIcon.addEventListener('click', () => {
+    menuSidebar.classList.add('active');
 });
 
-hambClose.addEventListener('click',() => {
-    hambTopMenu.classList.remove('active');
+menuClose.addEventListener('click', () => {
+    menuSidebar.classList.remove('active');
 });
 
 

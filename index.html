@@ -12,16 +12,16 @@
 <body>
     <!-----------HEADER----------->
     <header>
+        
+        <div class="header__hamb">
+            <i data-feather="menu" class="header__hamb__icon header__hamb__icon--secondary"></i>
+        </div>    
+        
         <a href="index.html">
         <img class="header__logo" src="./img/Logo_final_simple.png" alt="Logo">
         </a>
         <section class="header__menu">
-            <nav class="header__nav">
-                <a class="header__link" href="#">Inicio</a>
-                <a class="header__link" href="#">Nosotros</a>
-                <a class="header__link" href="#">Productos</a>
-                <a class="header__link" href="#">Contacto</a>
-            </nav>        
+                   
             <section class="header__user">
                 <i data-feather="user" class="header__icon"></i>
                 <div class="cart-icon-wraper">
@@ -29,39 +29,38 @@
                     <span id="cart-badge">2</span>
                 </div>
             </section>
+
         </section>
         
-        <div class="header__hamb">
-            <i data-feather="menu" class="header__hamb__icon header__hamb__icon--secondary"></i>
-        </div>    
     </header>
-   
+    
+    
     <!-----------MAIN----------->
     <main>
         <section class="banner">
             <h2 class="banner__title">Epic Collectibles</h2>
             <p class="banner__subtitle">Figuras exclusivas y piezas de colección para verdaderos fans y apasionados del detalle.</p>
         </section>
-
+        
         <section class="products">
             <article class="products__item">
                 <img class="products__img" src="img/product01.webp" alt="Producto Funko K-Pop">
                 <h3 class="products__title">Funko Pop Derpy #2260 K-Pop Demon Hunters</h3>
                 <p class="products__price">$319</p>
                 <button class="products__btn"
-                        data-name="Funko Pop Derpy #2260 K-Pop Demon Hunters"
-                        data-price="319"
-                        data-img="img/product01.webp">
+                data-name="Funko Pop Derpy #2260 K-Pop Demon Hunters"
+                data-price="319"
+                data-img="img/product01.webp">
                 AGREGAR AL CARRITO</button>
             </article>
-             <article class="products__item">
+            <article class="products__item">
                 <img class="products__img" src="img/product02.webp" alt="Producto Funko K-Pop">
                 <h3 class="products__title">Funko Pop Rumi #2257 K-Pop Demon Hunters</h3>
                 <p class="products__price">$319</p>
                 <button class="products__btn"
-                        data-name="Funko Pop Rumi #2257 K-Pop Demon Hunters"
-                        data-price="319"
-                        data-img="img/product02.webp">
+                data-name="Funko Pop Rumi #2257 K-Pop Demon Hunters"
+                data-price="319"
+                data-img="img/product02.webp">
                 AGREGAR AL CARRITO</button>
             </article>
              <article class="products__item">
@@ -82,7 +81,7 @@
                         data-name="Funko Pop Mira #2258 K-Pop Demon Hunters"
                         data-price="319"
                         data-img="img/product04.webp">
-                >AGREGAR AL CARRITO</button>
+                AGREGAR AL CARRITO</button>
             </article>
              <article class="products__item">
                 <img class="products__img" src="img/product05.webp" alt="Producto Funko K-Pop">
@@ -92,7 +91,7 @@
                         data-name="Funko Pop Zoey #2256 K-Pop Demon Hunters"
                         data-price="319"
                         data-img="img/product05.webp">
-                >AGREGAR AL CARRITO</button>
+                AGREGAR AL CARRITO</button>
             </article>
              <article class="products__item">
                 <img class="products__img" src="img/product06.webp" alt="Producto Pokémon">
@@ -217,21 +216,18 @@
         <div class="hamb__close">
             <i data-feather="x"></i>
         </div>
-        
-        <div class="hamb__user">
-            <i data-feather="user" class="header__icon"></i>
-            <div class="cart-hamb-wraper">
-                <i data-feather="shopping-cart" class="header__icon header__icon--secondary"></i>
-                <span class="cart-badge">2</span>
-            </div>
-        </div>
 
         <div class="hamb__nav">
-            <a class="header__link" href="#">Inicio</a>
-            <a class="header__link" href="#">Nosotros</a>
-            <a class="header__link" href="#">Productos</a>
-            <a class="header__link" href="#">Contacto</a>
+            <a class="hamb__link" href="#">Inicio</a>
+            <a class="hamb__link" href="#">Nosotros</a>
+            <a class="hamb__link" href="#">Productos</a>
+            <a class="hamb__link" href="#">Contacto</a>
         </div>
+
+        <a href="index.html">
+            <img class="hamb__logo" src="./img/Logo_final_simple.png" alt="Logo">
+        </a>
+
     </div>
 
     <!-----------SCRIPT FEATHER----------->

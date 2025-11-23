@@ -15,6 +15,7 @@ header {
   width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 40px 40px;
   box-sizing: border-box;
   background-color: #2e2e2e;
@@ -24,7 +25,7 @@ header img {
   filter: brightness(100);
 }
 header .header__hamb {
-  display: none;
+  display: flex;
   cursor: pointer;
   color: #fff;
   font-size: 2rem;
@@ -37,26 +38,13 @@ header .header__menu {
   display: flex;
   gap: 100px;
 }
-header .header__menu .header__nav {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  align-items: center;
-}
-header .header__menu .header__nav .header__link {
-  text-decoration: none;
-  font-size: clamp(0.5rem, 2vw, 1.2rem);
-  font-weight: 500;
-  color: #fff;
-  transition: color 0.3s ease, transform 0.3s ease;
-}
-header .header__menu .header__user {
+header .header__user {
   display: flex;
   justify-content: space-between;
   gap: 30px;
   align-items: center;
 }
-header .header__menu .header__user .header__icon {
+header .header__user .header__icon {
   cursor: pointer;
   color: #fff;
   transition: transform 0.2s;
@@ -159,76 +147,58 @@ header .header__menu .header__user .header__icon {
 .products .products__item .products__btn--unactive {
   background-color: #a8a8a8;
   opacity: 0.5;
+  pointer-events: none;
+}
+
+.hamb__menu, .hamb__menu * {
+  box-sizing: border-box;
 }
 
 .hamb__menu {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-between;
   position: fixed;
-  top: -100%;
-  right: 0;
-  width: 100%;
-  height: 300px;
+  top: 0%;
+  left: -100%;
+  width: 300px;
+  height: 100vh;
   background-color: #fff;
-  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.2);
   padding: 20px;
-  transition: top 0.5s ease;
+  transition: left 0.5s ease-in-out;
   z-index: 1000;
 }
-
-.hamb__menu.active {
-  top: 0;
-}
-
-.hamb__user {
-  display: flex;
+.hamb__menu .hamb__logo {
+  width: 100px;
   margin: 0 auto;
-  align-items: center;
-  gap: 50px;
+  display: block;
 }
-
-.cart-hamb-wraper {
-  position: relative;
-  display: inline-block;
-}
-
-.cart-badge {
-  position: absolute;
-  top: -10px;
-  right: -10px;
-  background-color: #00d0b2;
-  color: white;
-  font-size: 12px;
-  font-weight: bold;
-  width: 18px;
-  height: 18px;
-  text-align: center;
-  line-height: 18px;
-  border-radius: 50%;
-  pointer-events: none;
-}
-
-.hamb__nav {
+.hamb__menu .hamb__nav {
   display: flex;
   flex-direction: column;
+  margin-top: 6rem;
   align-items: center;
-  gap: 1rem;
+  gap: 2rem;
 }
-.hamb__nav a {
+.hamb__menu .hamb__nav .hamb__link {
   color: #2e2e2e;
   font-size: 1.5rem;
   font-weight: 500;
   text-decoration: none;
+  transition: 0.3s ease;
 }
-
-.hamb__close {
+.hamb__menu .hamb__close {
   position: absolute;
-  top: 15px;
-  right: 25px;
+  top: 50px;
+  left: 45px;
   cursor: pointer;
   font-size: 1.5rem;
   color: #2e2e2e;
+}
+
+.hamb__menu.active {
+  left: 0;
 }
 
 .cart-sidebar, .cart-sidebar * {
@@ -255,11 +225,18 @@ header .header__menu .header__user .header__icon {
 }
 
 .cart-content {
+  /*     border: 2px dashed green;
+   */
   width: 100%;
   height: 100vh;
   margin: 0;
   padding: 5px 5px;
   list-style: none;
+  overflow: scroll;
+}
+
+.cart-content::-webkit-scrollbar {
+  display: none;
 }
 
 .cart-content li {
@@ -394,10 +371,7 @@ header .header__menu .header__user .header__icon {
 }
 
 @media (hover: hover) {
-  .header__menu .header__nav .header__link:hover,
-  .header__menu .header__user .header__icon:hover,
-  .footer__menu .footer__nav .footer__link:hover,
-  .footer__menu .footer__div .footer__contact:hover {
+  .hamb__menu .hamb__nav .hamb__link:hover {
     color: #00d0b2;
     transform: scale(1.1);
   }
@@ -424,18 +398,14 @@ header .header__menu .header__user .header__icon {
   .products {
     grid-template-columns: repeat(2, 1fr);
   }
-  header .header__menu {
-    display: none;
-  }
-  header .header__hamb {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
   .cart-sidebar {
     width: 100%;
     height: 100%;
     right: -150%;
+  }
+  .hamb__menu {
+    width: 100%;
+    transition: left 0.3s ease-in-out;
   }
 }
 @media screen and (max-width: 560px) {
