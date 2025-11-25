@@ -8,6 +8,13 @@ const menuIcon = document.querySelector('.header__hamb__icon');
 const menuSidebar = document.querySelector('.hamb__menu');
 const menuClose = document.querySelector('.hamb__close');
 
+const modalConfirmation = document.querySelector('.modal_buy');
+const modalClose = document.querySelector('.modal_btn');
+
+const modalmg = document.querySelector('.modal_img');
+const modalName = document.querySelector('.modal_name');
+const modalPrice = document.querySelector('.modal_price_value');
+
 
 
 // ABRIR / CERRAR SIDEBAR CARRITO
@@ -28,6 +35,31 @@ menuIcon.addEventListener('click', () => {
 menuClose.addEventListener('click', () => {
     menuSidebar.classList.remove('active');
 });
+
+// ABRIR / CERRAR MODAL 
+
+addButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+        
+        const name = btn.dataset.name;
+        const price = btn.dataset.price;
+        const img = btn.dataset.img;
+        
+        modalmg.src = img;
+        modalName.textContent = name;
+        modalPrice.textContent = `$${price}`;
+
+        modalConfirmation.classList.add('active');
+    });
+});
+
+
+
+
+modalClose.addEventListener('click', () => {
+    modalConfirmation.classList.remove('active');
+})
+
 
 
 
